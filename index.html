@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Jamiu Sanni — WordPress Website Designer &amp; SEO Specialist</title>
-<meta name="description" content="Jamiu Sanni builds WordPress websites and improves search visibility for businesses. Top Rated on Upwork, 100% job success, 1,500+ hours worked." />
+<title>Jamiu Sanni — Website Designer, SEO &amp; GoHighLevel Specialist</title>
+<meta name="description" content="Jamiu Sanni builds WordPress websites, improves search visibility, and sets up GoHighLevel funnels, CRM and automation for businesses. Top Rated on Upwork." />
 <meta name="theme-color" content="#0f766e" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,38 +13,38 @@
 <style>
   * { box-sizing: border-box; }
 
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
+  html, body { margin: 0; padding: 0; width: 100%; }
 
   body {
     font-family: "DM Sans", sans-serif;
     color: #344054;
-    background: #f8fafc;
+    background: #f7f9fb;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
 
+  #jamiu-portfolio,
+  #jamiu-portfolio * { box-sizing: border-box; }
+
   #jamiu-portfolio {
     --primary: #0f766e;
     --primary-dark: #064e3b;
-    --primary-light: #dff7f3;
+    --primary-light: #e6f7f4;
     --dark: #10233d;
-    --text: #344054;
-    --muted: #55606f;       /* darkened from #667085 for readability */
+    --text: #475467;
+    --muted: #55606f;         /* darkened from #667085 for readability */
     --muted-strong: #414a58;
     --border: #e5e7eb;
-    --bg: #f8fafc;
+    --bg: #f7f9fb;
     --white: #ffffff;
     --gold: #f59e0b;
 
     width: 100%;
-    color: var(--text);
     background: var(--bg);
-    /* NOTE: no overflow:hidden here — it was breaking position:sticky on the nav */
+    color: var(--text);
+    font-family: "DM Sans", sans-serif;
+    /* NOTE: no overflow:hidden — it breaks position:sticky on the nav */
   }
 
   #jamiu-portfolio h1,
@@ -53,7 +53,6 @@
   #jamiu-portfolio h4 {
     font-family: "Manrope", sans-serif;
     color: var(--dark);
-    margin-top: 0;
   }
 
   #jamiu-portfolio a { text-decoration: none; }
@@ -68,22 +67,19 @@
     margin: 0 auto;
   }
 
-  /* =========================
-     NAVIGATION
-  ========================== */
+  /* NAVIGATION */
 
   .jp-nav {
     position: sticky;
     top: 0;
     z-index: 999;
     width: 100%;
-    background: rgba(255,255,255,.92);
+    background: rgba(255,255,255,.94);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(15,118,110,.08);
     /* isolate into its own compositing layer so the blur doesn't
-       bleed into other elements' paint (a known WebKit/Safari bug
-       with backdrop-filter + position:sticky) */
+       bleed into other elements' paint (known WebKit/Safari bug) */
     transform: translateZ(0);
     will-change: backdrop-filter;
     isolation: isolate;
@@ -94,193 +90,136 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    gap: 25px;
   }
 
   .jp-logo {
     display: flex;
     align-items: center;
     gap: 11px;
-    font-family: "Manrope", sans-serif;
-    font-weight: 800;
-    font-size: 20px;
     color: var(--dark);
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
   }
 
   .jp-logo-mark {
-    width: 38px;
-    height: 38px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, var(--primary), #22a699);
-    color: white;
+    width: 39px;
+    height: 39px;
     display: grid;
     place-items: center;
-    font-weight: 800;
-    box-shadow: 0 8px 20px rgba(15,118,110,.18);
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0f766e, #1ba99c);
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(15,118,110,.2);
   }
 
-  .jp-nav-links {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-  }
+  .jp-nav-links { display: flex; align-items: center; gap: 22px; }
 
-  .jp-nav-links a {
-    font-size: 14px;
-    font-weight: 600;
-    color: #475467;
-    transition: .25s ease;
-  }
-
+  .jp-nav-links a { color: #475467; font-size: 14px; font-weight: 700; transition: .25s ease; }
   .jp-nav-links a:hover { color: var(--primary); }
 
-  .jp-nav-cta {
-    background: var(--dark);
-    color: white !important;
-    padding: 11px 18px;
-    border-radius: 10px;
-  }
+  .jp-nav-cta { background: var(--dark); color: #fff !important; padding: 11px 18px; border-radius: 10px; }
 
   .jp-mobile-menu {
     display: none;
     border: 1px solid var(--border);
-    background: white;
+    background: #fff;
     border-radius: 9px;
-    padding: 8px 10px;
-    font-size: 18px;
+    padding: 8px 11px;
     cursor: pointer;
+    font-size: 18px;
   }
 
-  /* =========================
-     HERO
-  ========================== */
+  /* HERO */
 
   .jp-hero {
-    position: relative;
-    padding: 100px 0 80px;
+    padding: 105px 0 90px;
     background:
-      radial-gradient(circle at 10% 10%, rgba(15,118,110,.12), transparent 30%),
-      radial-gradient(circle at 90% 20%, rgba(34,166,153,.10), transparent 25%),
-      #ffffff;
+      radial-gradient(circle at 10% 15%, rgba(15,118,110,.13), transparent 30%),
+      radial-gradient(circle at 90% 20%, rgba(34,166,153,.10), transparent 27%),
+      #fff;
   }
 
-  .jp-hero-grid {
-    display: grid;
-    grid-template-columns: 1.2fr .8fr;
-    gap: 70px;
-    align-items: center;
-  }
+  .jp-hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 70px; align-items: center; }
 
   .jp-eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 8px 13px;
-    border-radius: 999px;
     background: var(--primary-light);
     color: var(--primary-dark);
+    padding: 8px 14px;
+    border-radius: 999px;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 22px;
   }
 
-  .jp-eyebrow-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #22c55e;
-  }
+  .jp-eyebrow-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; }
 
   .jp-hero h1 {
-    font-size: clamp(42px, 6vw, 74px);
+    margin: 0 0 24px;
+    font-size: clamp(43px, 6vw, 72px);
     line-height: 1.08;
-    letter-spacing: -2.5px;
-    margin-bottom: 24px;
+    letter-spacing: -2.4px;
   }
 
   .jp-hero h1 span { color: var(--primary); }
 
   .jp-hero-text {
-    font-size: 18px;
-    font-weight: 500;              /* was 400 — thin weight at this muted color read as blurry */
-    line-height: 1.8;
-    max-width: 650px;
-    color: var(--muted-strong);    /* darkened for contrast */
+    max-width: 680px;
     margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.8;
+    color: var(--muted-strong);
   }
 
-  .jp-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-bottom: 34px;
-  }
+  .jp-buttons { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 34px; }
 
   .jp-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 9px;
+    gap: 8px;
     padding: 14px 22px;
     border-radius: 11px;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 800;
     transition: .25s ease;
     cursor: pointer;
   }
 
-  .jp-btn-primary {
-    background: var(--primary);
-    color: white;
-    box-shadow: 0 12px 25px rgba(15,118,110,.18);
-  }
+  .jp-btn-primary { background: var(--primary); color: #fff; box-shadow: 0 12px 28px rgba(15,118,110,.2); }
+  .jp-btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
 
-  .jp-btn-primary:hover {
-    transform: translateY(-2px);
-    background: var(--primary-dark);
-  }
+  .jp-btn-secondary { background: #fff; border: 1px solid var(--border); color: var(--dark); }
+  .jp-btn-secondary:hover { color: var(--primary); border-color: var(--primary); }
 
-  .jp-btn-secondary {
-    color: var(--dark);
-    background: white;
-    border: 1px solid var(--border);
-  }
-
-  .jp-btn-secondary:hover {
-    border-color: var(--primary);
-    color: var(--primary);
-  }
-
-  .jp-trust-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
+  .jp-trust-row { display: flex; flex-wrap: wrap; gap: 10px; }
 
   .jp-trust-item {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 7px;
+    background: #fff;
+    border: 1px solid #e7edf0;
     padding: 10px 13px;
     border-radius: 10px;
-    background: rgba(255,255,255,.8);
-    border: 1px solid #e8eef0;
-    font-size: 13px;
-    font-weight: 700;
     color: #344054;
+    font-size: 12px;
+    font-weight: 800;
   }
 
-  .jp-trust-icon { color: var(--primary); }
-
-  /* HERO CARD */
+  /* PROFILE CARD */
 
   .jp-profile-card {
-    position: relative;
-    background: white;
-    border: 1px solid #e5ebee;
+    background: #fff;
+    border: 1px solid #e4eaee;
     border-radius: 24px;
     padding: 32px;
-    box-shadow: 0 30px 70px rgba(16,35,61,.10);
+    box-shadow: 0 30px 70px rgba(16,35,61,.1);
   }
 
   .jp-profile-top {
@@ -294,453 +233,251 @@
   .jp-avatar {
     width: 64px;
     height: 64px;
-    border-radius: 18px;
-    background: linear-gradient(135deg, var(--primary), #164e63);
     display: grid;
     place-items: center;
-    color: white;
-    font-family: "Manrope";
-    font-size: 24px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--primary), #164e63);
+    color: #fff;
+    font-family: "Manrope", sans-serif;
+    font-size: 23px;
     font-weight: 800;
   }
 
-  .jp-profile-name {
-    font-family: "Manrope";
-    font-size: 20px;
-    font-weight: 800;
-    color: var(--dark);
-  }
-
-  .jp-profile-role {
-    color: var(--muted-strong);
-    font-size: 13px;
-    margin-top: 4px;
-  }
+  .jp-profile-name { color: var(--dark); font-family: "Manrope", sans-serif; font-size: 20px; font-weight: 800; }
+  .jp-profile-role { margin-top: 4px; color: var(--muted-strong); font-size: 13px; }
 
   .jp-upwork-card {
-    margin-top: 24px;
-    background: linear-gradient(135deg, #f0fdf9, #ffffff);
-    border: 1px solid #bde8dd;
+    margin-top: 22px;
     padding: 20px;
     border-radius: 16px;
+    border: 1px solid #bde8dd;
+    background: linear-gradient(135deg, #f0fdf9, #ffffff);
   }
 
-  .jp-upwork-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-  }
-
-  .jp-upwork-label {
-    color: var(--primary-dark);
-    font-size: 12px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
+  .jp-upwork-top { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+  .jp-upwork-label { color: var(--primary-dark); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
 
   .jp-top-rated {
     display: inline-flex;
     align-items: center;
     gap: 7px;
     background: #108a00;
-    color: white;
+    color: #fff;
     font-size: 12px;
     font-weight: 800;
     padding: 7px 10px;
     border-radius: 999px;
   }
 
-  .jp-upwork-title {
-    margin: 12px 0 16px;
-    font-family: "Manrope";
-    color: var(--dark);
-    font-size: 20px;
-    font-weight: 800;
-  }
+  .jp-upwork-title { margin: 12px 0 16px; font-family: "Manrope"; color: var(--dark); font-size: 20px; font-weight: 800; }
+  .jp-upwork-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 
-  .jp-upwork-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
-
-  .jp-stat {
-    background: white;
-    padding: 12px 8px;
-    border-radius: 10px;
-    text-align: center;
-    border: 1px solid #e6f2ef;
-  }
-
-  .jp-stat strong {
-    display: block;
-    font-family: "Manrope";
-    font-size: 16px;
-    color: var(--dark);
-  }
-
+  .jp-stat { background: #fff; padding: 12px 8px; border-radius: 10px; text-align: center; border: 1px solid #e6f2ef; }
+  .jp-stat strong { display: block; font-family: "Manrope"; font-size: 16px; color: var(--dark); }
   .jp-stat span { font-size: 10px; color: var(--muted-strong); }
 
-  /* =========================
-     SECTIONS
-  ========================== */
+  .jp-ghl-card {
+    margin-top: 18px;
+    padding: 21px;
+    border-radius: 16px;
+    border: 1px solid #bde8df;
+    background: linear-gradient(135deg, #effcf9, #fff);
+  }
+
+  .jp-card-label { color: var(--primary); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; }
+  .jp-ghl-card h3 { margin: 10px 0 15px; font-size: 20px; }
+
+  .jp-mini-items { display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px; }
+
+  .jp-mini-item {
+    padding: 10px;
+    border-radius: 9px;
+    background: #fff;
+    border: 1px solid #e5efed;
+    color: #475467;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  /* SECTIONS */
 
   .jp-section { padding: 100px 0; }
-  .jp-section-white { background: white; }
-
-  .jp-section-header { max-width: 720px; margin-bottom: 55px; }
+  .jp-section-white { background: #fff; }
+  .jp-section-header { max-width: 760px; margin-bottom: 55px; }
 
   .jp-section-label {
     display: inline-block;
+    margin-bottom: 13px;
     color: var(--primary);
     font-size: 13px;
     font-weight: 800;
     letter-spacing: 1.3px;
     text-transform: uppercase;
-    margin-bottom: 13px;
   }
 
-  .jp-section-title {
-    font-size: clamp(32px, 4vw, 50px);
-    line-height: 1.15;
-    letter-spacing: -1.5px;
-    margin-bottom: 16px;
-  }
+  .jp-section-title { margin: 0 0 16px; font-size: clamp(32px, 4vw, 50px); line-height: 1.15; letter-spacing: -1.5px; }
+  .jp-section-description { margin: 0; color: var(--muted-strong); font-size: 17px; line-height: 1.75; }
 
-  .jp-section-description {
-    font-size: 17px;
-    line-height: 1.75;
-    color: var(--muted-strong);
-  }
+  /* SERVICES */
 
-  /* =========================
-     SERVICES
-  ========================== */
+  .jp-services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 
-  .jp-services {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-  }
-
-  .jp-service-card {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 30px;
-    transition: .3s ease;
-  }
-
-  .jp-service-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(15,118,110,.35);
-    box-shadow: 0 20px 45px rgba(16,35,61,.08);
-  }
+  .jp-service-card { background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 27px; transition: .3s ease; }
+  .jp-service-card:hover { transform: translateY(-6px); border-color: rgba(15,118,110,.4); box-shadow: 0 20px 45px rgba(16,35,61,.08); }
 
   .jp-service-icon {
-    width: 52px;
-    height: 52px;
+    width: 51px;
+    height: 51px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 20px;
     border-radius: 14px;
     background: var(--primary-light);
     color: var(--primary);
-    display: grid;
-    place-items: center;
-    font-size: 23px;
-    margin-bottom: 20px;
+    font-size: 22px;
   }
 
-  .jp-service-card h3 { font-size: 20px; margin-bottom: 11px; }
+  .jp-service-card h3 { margin: 0 0 11px; font-size: 19px; }
+  .jp-service-card p { margin: 0; color: var(--muted-strong); font-size: 14px; line-height: 1.75; }
 
-  .jp-service-card p {
-    color: var(--muted-strong);
-    line-height: 1.7;
-    margin: 0;
-    font-size: 15px;
+  /* GHL SOLUTIONS */
+
+  .jp-ghl-section {
+    background: radial-gradient(circle at 10% 20%, rgba(15,118,110,.08), transparent 28%), #f8fafb;
   }
 
-  /* =========================
-     PORTFOLIO
-  ========================== */
+  .jp-ghl-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 55px; align-items: start; }
+  .jp-ghl-intro { position: sticky; top: 110px; }
+  .jp-ghl-intro h2 { margin: 0 0 18px; font-size: clamp(34px, 4vw, 52px); line-height: 1.15; letter-spacing: -1.5px; }
+  .jp-ghl-intro p { color: var(--muted-strong); line-height: 1.8; font-size: 16px; }
+
+  .jp-ghl-solutions { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+  .jp-ghl-solution { min-height: 170px; background: #fff; border: 1px solid #e4ebed; border-radius: 17px; padding: 24px; transition: .25s ease; }
+  .jp-ghl-solution:hover { transform: translateY(-4px); border-color: rgba(15,118,110,.45); box-shadow: 0 18px 35px rgba(16,35,61,.07); }
+  .jp-ghl-solution-icon { margin-bottom: 17px; font-size: 25px; }
+  .jp-ghl-solution h3 { margin: 0 0 8px; font-size: 17px; }
+  .jp-ghl-solution p { margin: 0; color: var(--muted-strong); font-size: 13px; line-height: 1.65; }
+
+  /* PORTFOLIO */
 
   .jp-projects { display: grid; gap: 35px; }
 
   .jp-project {
     display: grid;
     grid-template-columns: 1.15fr .85fr;
-    background: white;
+    min-height: 410px;
+    background: #fff;
     border: 1px solid var(--border);
     border-radius: 22px;
     overflow: hidden;
-    min-height: 390px;
   }
 
   .jp-project:nth-child(even) { direction: rtl; }
   .jp-project:nth-child(even) > * { direction: ltr; }
 
-  /* Live iframe previews of the actual sites. These work as long as the
-     target site doesn't send X-Frame-Options/CSP frame-ancestors headers
-     blocking embedding — that's a property of the target site, not of
-     whatever platform hosts this page, so if it worked on GHL it'll work
-     on Vercel too. */
-  .jp-project-preview {
-    position: relative;
-    min-height: 390px;
-    background: #eef2f5;
-    overflow: hidden;
-  }
-
-  .jp-browser {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    inset: 0;
-    background: white;
-  }
+  .jp-project-preview { min-height: 410px; position: relative; background: #eef2f5; overflow: hidden; }
+  .jp-browser { position: absolute; inset: 0; background: #fff; }
 
   .jp-browser-bar {
-    height: 38px;
+    height: 39px;
     display: flex;
     align-items: center;
     gap: 6px;
-    padding: 0 15px;
+    padding: 0 14px;
     background: #f8fafc;
     border-bottom: 1px solid #e5e7eb;
   }
 
-  .jp-browser-dot { width: 9px; height: 9px; border-radius: 50%; background: #d1d5db; }
+  .jp-browser-dot { width: 9px; height: 9px; border-radius: 50%; background: #d0d5dd; }
+  .jp-browser-url { width: 65%; max-width: 300px; height: 20px; margin-left: 8px; border-radius: 6px; background: #e4e7ec; }
+  .jp-project-frame { width: 100%; height: calc(100% - 39px); border: 0; background: #fff; }
 
-  .jp-browser-url {
-    margin-left: 8px;
-    width: 65%;
-    max-width: 330px;
-    height: 20px;
-    border-radius: 6px;
-    background: #e5e7eb;
-  }
+  .jp-project-info { display: flex; flex-direction: column; justify-content: center; padding: 48px; }
+  .jp-project-number { margin-bottom: 15px; color: var(--primary); font-size: 12px; font-weight: 800; letter-spacing: 1px; }
+  .jp-project-info h3 { margin: 0 0 16px; font-size: 31px; line-height: 1.2; }
+  .jp-project-info p { margin: 0 0 23px; color: var(--muted-strong); line-height: 1.75; }
 
-  .jp-project-frame {
-    width: 100%;
-    height: calc(100% - 38px);
-    border: 0;
-    background: white;
-  }
+  .jp-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 27px; }
+  .jp-tag { padding: 7px 10px; border-radius: 999px; background: #f1f5f9; color: #475467; font-size: 11px; font-weight: 800; }
+  .jp-project-link { color: var(--primary); font-size: 14px; font-weight: 800; display: inline-flex; align-items: center; gap: 8px; }
 
-  .jp-project-info {
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .jp-project-number {
-    color: var(--primary);
-    font-weight: 800;
-    font-size: 13px;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-  }
-
-  .jp-project-info h3 { font-size: 32px; line-height: 1.2; margin-bottom: 17px; }
-
-  .jp-project-info p {
-    color: var(--muted-strong);
-    line-height: 1.75;
-    margin-bottom: 23px;
-  }
-
-  .jp-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
-
-  .jp-tag {
-    padding: 7px 10px;
-    border-radius: 999px;
-    background: #f1f5f9;
-    color: #475467;
-    font-size: 12px;
-    font-weight: 700;
-  }
-
-  .jp-project-link {
-    color: var(--primary);
-    font-weight: 800;
-    font-size: 14px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  /* =========================
-     UPWORK / REVIEWS
-  ========================== */
+  /* UPWORK */
 
   .jp-upwork-banner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-    padding: 32px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #0f766e, #115e59);
-    color: white;
     margin-bottom: 60px;
+    padding: 34px;
+    border-radius: 21px;
+    background: linear-gradient(135deg, #0f766e, #115e59);
+    color: #fff;
   }
 
-  .jp-upwork-banner h3 { color: white; font-size: 26px; margin: 0 0 7px; }
+  .jp-upwork-banner h3 { margin: 0 0 7px; color: #fff; font-size: 27px; }
+  .jp-upwork-banner p { margin: 0; color: rgba(255,255,255,.85); }
+  .jp-upwork-btn { padding: 14px 21px; border-radius: 10px; background: #fff; color: var(--primary-dark); font-size: 14px; font-weight: 800; white-space: nowrap; }
 
-  .jp-upwork-banner p {
-    margin: 0;
-    color: rgba(255,255,255,.85);
-    line-height: 1.6;
-  }
+  /* REVIEWS */
 
-  .jp-upwork-btn {
-    white-space: nowrap;
-    padding: 14px 20px;
-    border-radius: 10px;
-    background: white;
-    color: var(--primary-dark);
-    font-weight: 800;
-    font-size: 14px;
-  }
+  .jp-reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .jp-review { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 29px; transition: .3s ease; }
+  .jp-review:hover { transform: translateY(-5px); box-shadow: 0 20px 45px rgba(16,35,61,.08); }
+  .jp-stars { margin-bottom: 19px; color: var(--gold); letter-spacing: 2px; }
+  .jp-review-text { flex: 1; margin-bottom: 25px; color: #3d4552; font-size: 14px; line-height: 1.8; }
+  .jp-review-client { padding-top: 17px; border-top: 1px solid var(--border); }
+  .jp-review-client strong { display: block; color: var(--dark); font-family: "Manrope"; font-size: 15px; }
+  .jp-review-client span { color: var(--primary); font-size: 11px; font-weight: 800; }
 
-  .jp-reviews {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-  }
+  /* SKILLS */
 
-  .jp-review {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    transition: .3s ease;
-  }
+  .jp-skills-box { padding: 38px; background: #fff; border: 1px solid var(--border); border-radius: 22px; }
+  .jp-skills { display: flex; flex-wrap: wrap; gap: 11px; }
+  .jp-skill { padding: 11px 16px; border-radius: 10px; border: 1px solid #e5eaf0; background: #f8fafc; color: #475467; font-size: 13px; font-weight: 700; }
 
-  .jp-review:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 45px rgba(16,35,61,.08);
-  }
+  /* CTA */
 
-  .jp-stars { color: var(--gold); font-size: 18px; letter-spacing: 2px; margin-bottom: 20px; }
-
-  .jp-review-text {
-    font-size: 15px;
-    line-height: 1.8;
-    color: #3d4552;
-    margin-bottom: 25px;
-    flex: 1;
-  }
-
-  .jp-review-client { border-top: 1px solid var(--border); padding-top: 18px; }
-
-  .jp-review-client strong {
-    display: block;
-    color: var(--dark);
-    font-family: "Manrope";
-    font-size: 15px;
-  }
-
-  .jp-review-client span { font-size: 12px; color: var(--primary); font-weight: 700; }
-
-  /* =========================
-     SKILLS
-  ========================== */
-
-  .jp-skills-box {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 22px;
-    padding: 40px;
-  }
-
-  .jp-skills { display: flex; flex-wrap: wrap; gap: 12px; }
-
-  .jp-skill {
-    padding: 11px 16px;
-    border-radius: 10px;
-    background: #f8fafc;
-    border: 1px solid #e9eef3;
-    font-size: 14px;
-    font-weight: 700;
-    color: #475467;
-  }
-
-  /* =========================
-     CTA
-  ========================== */
-
-  .jp-cta {
-    padding: 90px 0;
-    background: linear-gradient(135deg, #10233d, #17395f);
-    text-align: center;
-  }
-
+  .jp-cta { padding: 100px 0; text-align: center; background: linear-gradient(135deg, #10233d, #17395f); }
   .jp-cta-inner { max-width: 760px; margin: auto; }
 
   #jamiu-portfolio .jp-cta h2 {
-    color: white;
-    font-size: clamp(34px, 5vw, 56px);
+    margin: 0 0 20px;
+    color: #fff;
+    font-size: clamp(35px, 5vw, 58px);
     line-height: 1.15;
-    margin-bottom: 20px;
     -webkit-font-smoothing: antialiased;
   }
 
-  .jp-cta p {
-    color: rgba(255,255,255,.85);
-    font-size: 17px;
-    line-height: 1.75;
-    margin-bottom: 30px;
-  }
+  .jp-cta p { margin: 0 0 32px; color: rgba(255,255,255,.85); font-size: 17px; line-height: 1.75; }
+  .jp-cta .jp-btn-primary { background: #fff; color: var(--dark); }
 
-  .jp-cta .jp-btn-primary { background: #ffffff; color: var(--dark); }
+  /* FOOTER */
 
-  /* =========================
-     FOOTER
-  ========================== */
-
-  .jp-footer {
-    width: 100%;
-    background: #081827;
-    color: white;
-    padding: 35px 0;
-  }
-
+  .jp-footer { width: 100%; padding: 37px 0; background: #081827; }
   .jp-footer-inner {
     width: min(1180px, calc(100% - 40px));
     margin: auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     gap: 25px;
     flex-wrap: wrap;
   }
 
-  .jp-footer-name { font-family: "Manrope"; font-size: 18px; font-weight: 800; }
-
-  .jp-footer-text {
-    font-size: 13px;
-    font-weight: 500;
-    color: #b7bfcc;      /* was #98a2b3 — too low-contrast on the dark footer */
-    margin-top: 5px;
-  }
-
+  .jp-footer-name { color: #fff; font-family: "Manrope"; font-size: 18px; font-weight: 800; }
+  .jp-footer-text { margin-top: 5px; color: #b7bfcc; font-size: 13px; font-weight: 500; }
   .jp-footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
+  .jp-footer-links a { color: #d6dce6; font-size: 13px; font-weight: 700; }
+  .jp-footer-links a:hover { color: #fff; }
 
-  .jp-footer-links a { color: #d6dce6; font-size: 13px; font-weight: 600; }
-  .jp-footer-links a:hover { color: white; }
+  /* RESPONSIVE */
 
-  /* =========================
-     RESPONSIVE
-  ========================== */
-
-  @media (max-width: 1000px) {
-    .jp-hero-grid { grid-template-columns: 1fr; gap: 50px; }
-    .jp-profile-card { max-width: 600px; }
+  @media (max-width: 1050px) {
     .jp-services { grid-template-columns: repeat(2, 1fr); }
+    .jp-hero-grid, .jp-ghl-grid { grid-template-columns: 1fr; }
+    .jp-ghl-intro { position: static; }
     .jp-project { grid-template-columns: 1fr; }
     .jp-project:nth-child(even) { direction: ltr; }
     .jp-project-preview { min-height: 430px; }
@@ -748,48 +485,44 @@
   }
 
   @media (max-width: 760px) {
+    .jp-container { width: min(100% - 28px, 1180px); }
     .jp-nav-inner { min-height: 68px; }
     .jp-mobile-menu { display: block; }
 
     .jp-nav-links {
       display: none;
       position: absolute;
+      top: 68px;
       left: 0;
       right: 0;
-      top: 68px;
-      background: white;
-      padding: 20px;
-      border-bottom: 1px solid var(--border);
       flex-direction: column;
       align-items: flex-start;
-      gap: 20px;
+      gap: 19px;
+      padding: 22px;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
     }
 
     .jp-nav-links.jp-show { display: flex; }
 
-    .jp-hero { padding: 70px 0 60px; }
-    .jp-hero h1 { letter-spacing: -1.7px; }
+    .jp-hero { padding: 75px 0 65px; }
     .jp-hero-text { font-size: 16px; }
-    .jp-section { padding: 70px 0; }
+    .jp-section { padding: 75px 0; }
+    .jp-ghl-solutions { grid-template-columns: 1fr; }
     .jp-services { grid-template-columns: 1fr; }
-    .jp-project-preview { min-height: 350px; }
-    .jp-project-info { padding: 32px 25px; }
-    .jp-project-info h3 { font-size: 27px; }
-    .jp-upwork-banner { align-items: flex-start; flex-direction: column; }
-    .jp-upwork-stats { grid-template-columns: repeat(3, 1fr); }
-    .jp-skills-box { padding: 25px; }
+    .jp-project-preview { min-height: 340px; }
+    .jp-project-info { padding: 32px 24px; }
+    .jp-upwork-banner { flex-direction: column; align-items: flex-start; }
     .jp-footer-inner { flex-direction: column; align-items: flex-start; }
   }
 
   @media (max-width: 480px) {
-    .jp-avatar { width: 55px; height: 55px; }
     .jp-profile-card { padding: 22px; }
-    .jp-upwork-stats { gap: 6px; }
-    .jp-stat strong { font-size: 14px; }
-    .jp-stat { padding: 10px 4px; }
+    .jp-avatar { width: 55px; height: 55px; }
     .jp-buttons { flex-direction: column; }
     .jp-btn { width: 100%; }
-    .jp-project-preview { min-height: 280px; }
+    .jp-project-preview { min-height: 270px; }
+    .jp-skills-box { padding: 24px; }
   }
 </style>
 </head>
@@ -797,358 +530,487 @@
 
 <div id="jamiu-portfolio">
 
-  <!-- NAVIGATION -->
-  <nav class="jp-nav">
-    <div class="jp-container jp-nav-inner">
-
-      <a href="#home" class="jp-logo">
-        <span class="jp-logo-mark">J</span>
-        Jamiu Sanni
-      </a>
-
-      <button class="jp-mobile-menu" onclick="jpToggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="jpNavLinks">
-        ☰
-      </button>
-
-      <div class="jp-nav-links" id="jpNavLinks">
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#skills">Skills</a>
-        <a href="https://wa.me/2347035373028?text=Hi%20Jamiu%2C%20I%27d%20like%20to%20talk%20about%20a%20website%2FSEO%20project" target="_blank" rel="noopener noreferrer" class="jp-nav-cta">Let's Work Together</a>
-      </div>
-
-    </div>
-  </nav>
-
-
-  <!-- HERO -->
-  <section class="jp-hero" id="home">
-    <div class="jp-container jp-hero-grid">
-
-      <div>
-
-        <div class="jp-eyebrow">
-          <span class="jp-eyebrow-dot"></span>
-          Available for Website & SEO Projects
-        </div>
-
-        <h1>I build websites that are designed to <span>perform.</span></h1>
-
-        <p class="jp-hero-text">
-          I'm Jamiu Sanni, a WordPress Website Designer and SEO Specialist.
-          I help businesses build professional, high-performing websites and
-          improve their visibility in search engines.
-        </p>
-
-        <div class="jp-buttons">
-          <a href="#portfolio" class="jp-btn jp-btn-primary">View My Work →</a>
-          <a href="https://wa.me/2347035373028?text=Hi%20Jamiu%2C%20I%27d%20like%20to%20talk%20about%20a%20website%2FSEO%20project" target="_blank" rel="noopener noreferrer" class="jp-btn jp-btn-secondary">Let's Talk</a>
-        </div>
-
-        <div class="jp-trust-row">
-          <div class="jp-trust-item"><span class="jp-trust-icon">★</span> Top Rated on Upwork</div>
-          <div class="jp-trust-item"><span class="jp-trust-icon">✓</span> 100% Job Success</div>
-          <div class="jp-trust-item"><span class="jp-trust-icon">✓</span> WordPress & SEO Expert</div>
-        </div>
-
-      </div>
-
-
-      <div class="jp-profile-card">
-
-        <div class="jp-profile-top">
-          <div class="jp-avatar">JS</div>
-          <div>
-            <div class="jp-profile-name">Jamiu Sanni</div>
-            <div class="jp-profile-role">Website Designer & SEO Specialist</div>
-          </div>
-        </div>
-
-        <div class="jp-upwork-card">
-
-          <div class="jp-upwork-top">
-            <div class="jp-upwork-label">Professional Profile</div>
-            <div class="jp-top-rated">★ Top Rated</div>
-          </div>
-
-          <div class="jp-upwork-title">Trusted by clients on Upwork</div>
-
-          <div class="jp-upwork-stats">
-            <div class="jp-stat"><strong>100%</strong><span>Job Success</span></div>
-            <div class="jp-stat"><strong>4.6★</strong><span>Client Rating</span></div>
-            <div class="jp-stat"><strong>1,500+</strong><span>Hours Worked</span></div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- SERVICES -->
-  <section class="jp-section" id="services">
-    <div class="jp-container">
-
-      <div class="jp-section-header">
-        <div class="jp-section-label">What I Do</div>
-        <h2 class="jp-section-title">Websites built with strategy, performance and growth in mind.</h2>
-        <p class="jp-section-description">
-          From building a professional website to improving search visibility,
-          I combine design and SEO to create websites that do more than just look good.
-        </p>
-      </div>
-
-      <div class="jp-services">
-
-        <div class="jp-service-card">
-          <div class="jp-service-icon">◈</div>
-          <h3>WordPress Website Design</h3>
-          <p>Professional, responsive WordPress websites built to represent your business and provide a smooth experience across all devices.</p>
-        </div>
-
-        <div class="jp-service-card">
-          <div class="jp-service-icon">⌕</div>
-          <h3>SEO & Website Optimization</h3>
-          <p>On-page SEO, technical SEO, site structure, indexing, speed and optimization to improve your website's search performance.</p>
-        </div>
-
-        <div class="jp-service-card">
-          <div class="jp-service-icon">⚙</div>
-          <h3>Website Management</h3>
-          <p>Ongoing website updates, content publishing, fixes, optimization and technical support for businesses that need reliable help.</p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- PORTFOLIO -->
-  <section class="jp-section jp-section-white" id="portfolio">
-    <div class="jp-container">
-
-      <div class="jp-section-header">
-        <div class="jp-section-label">Selected Work</div>
-        <h2 class="jp-section-title">A look at some of the projects I've worked on.</h2>
-        <p class="jp-section-description">
-          A selection of website, SEO and digital projects demonstrating my
-          approach to design, functionality and online growth.
-        </p>
-      </div>
-
-      <div class="jp-projects">
-
-        <!-- PROJECT 1 -->
-        <article class="jp-project">
-          <div class="jp-project-preview">
-            <div class="jp-browser">
-              <div class="jp-browser-bar">
-                <span class="jp-browser-dot"></span>
-                <span class="jp-browser-dot"></span>
-                <span class="jp-browser-dot"></span>
-                <span class="jp-browser-url"></span>
-              </div>
-              <iframe class="jp-project-frame" data-src="https://seo.219agency.com" loading="lazy" title="219 Agency SEO — live preview"></iframe>
-            </div>
-          </div>
-
-          <div class="jp-project-info">
-            <div class="jp-project-number">01 / SEO PROJECT</div>
-            <h3>219 Agency SEO</h3>
-            <p>An SEO-focused web project designed to present services, improve search visibility and provide a clear structure for users and search engines.</p>
-            <div class="jp-tags">
-              <span class="jp-tag">SEO</span>
-              <span class="jp-tag">Website Optimization</span>
-              <span class="jp-tag">Content Strategy</span>
-            </div>
-            <a href="https://seo.219agency.com" target="_blank" rel="noopener noreferrer" class="jp-project-link">Visit Project →</a>
-          </div>
-        </article>
-
-        <!-- PROJECT 2 -->
-        <article class="jp-project">
-          <div class="jp-project-preview">
-            <div class="jp-browser">
-              <div class="jp-browser-bar">
-                <span class="jp-browser-dot"></span>
-                <span class="jp-browser-dot"></span>
-                <span class="jp-browser-dot"></span>
-                <span class="jp-browser-url"></span>
-              </div>
-              <iframe class="jp-project-frame" data-src="https://clickleadz.net" loading="lazy" title="ClickLeadz — live preview"></iframe>
-            </div>
-          </div>
-
-          <div class="jp-project-info">
-            <div class="jp-project-number">02 / SAAS PROJECT</div>
-            <h3>ClickLeadz</h3>
-            <p>A lead generation platform focused on helping businesses capture and organize potential customers from Facebook groups and other engagement opportunities.</p>
-            <div class="jp-tags">
-              <span class="jp-tag">SaaS</span>
-              <span class="jp-tag">Lead Generation</span>
-              <span class="jp-tag">Marketing</span>
-            </div>
-            <a href="https://clickleadz.net" target="_blank" rel="noopener noreferrer" class="jp-project-link">Visit Project →</a>
-          </div>
-        </article>
-
-        <!-- PROJECT 3 -->
-        <article class="jp-project">
-          <div class="jp-project-preview">
-            <div class="jp-browser">
-              <div class="jp-browser-bar">
-                <span class="jp-browser-dot"></span>
-                <span class="jp-browser-dot"></span>
-                <span class="jp-browser-dot"></span>
-                <span class="jp-browser-url"></span>
-              </div>
-              <iframe class="jp-project-frame" data-src="https://dynamicpower.vercel.app" loading="lazy" title="Dynamic Power — live preview"></iframe>
-            </div>
-          </div>
-
-          <div class="jp-project-info">
-            <div class="jp-project-number">03 / PRODUCT LANDING PAGE</div>
-            <h3>Dynamic Power</h3>
-            <p>A conversion-focused landing page designed to communicate the benefits of a portable power solution and generate interest from potential customers.</p>
-            <div class="jp-tags">
-              <span class="jp-tag">Landing Page</span>
-              <span class="jp-tag">Conversion</span>
-              <span class="jp-tag">Product Marketing</span>
-            </div>
-            <a href="https://dynamicpower.vercel.app" target="_blank" rel="noopener noreferrer" class="jp-project-link">Visit Project →</a>
-          </div>
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- REVIEWS -->
-  <section class="jp-section" id="reviews">
-    <div class="jp-container">
-
-      <div class="jp-upwork-banner">
-        <div>
-          <h3>⭐ Top Rated on Upwork</h3>
-          <p>See my professional profile, work history and client feedback.</p>
-        </div>
-        <a id="jpUpworkLink" href="#" target="_blank" rel="noopener noreferrer" class="jp-upwork-btn">View My Upwork Profile →</a>
-      </div>
-
-      <div class="jp-section-header">
-        <div class="jp-section-label">Client Reviews</div>
-        <h2 class="jp-section-title">What clients say about working with me.</h2>
-        <p class="jp-section-description">Real feedback from clients I've worked with through Upwork.</p>
-      </div>
-
-      <div class="jp-reviews">
-
-        <article class="jp-review">
-          <div class="jp-stars">★★★★★</div>
-          <div class="jp-review-text">
-            "Jamiu did an excellent job fixing linking and button issues on my WordPress + Elementor site. He quickly identified the root cause, cleaned up problematic code, and made sure everything was working exactly as it should across devices.
-            <br><br>
-            Communication was clear, turnaround was fast, and he confirmed everything thoroughly before closing the task. No overcomplication, just efficient, high-quality work.
-            <br><br>
-            If you need a reliable WordPress/Elementor expert who actually understands what they're doing, Jamiu is a safe choice. Will happily work with him again."
-          </div>
-          <div class="jp-review-client">
-            <strong>Jonathan Sumner</strong>
-            <span>Verified Upwork Client</span>
-          </div>
-        </article>
-
-        <article class="jp-review">
-          <div class="jp-stars">★★★★★</div>
-          <div class="jp-review-text">"Jamiu is professional and eager to work. He is consistent and reliable."</div>
-          <div class="jp-review-client">
-            <strong>Janna Lusk</strong>
-            <span>Verified Upwork Client</span>
-          </div>
-        </article>
-
-        <article class="jp-review">
-          <div class="jp-stars">★★★★★</div>
-          <div class="jp-review-text">"Jamiu was easy to work with and understood what needed to be done. He paid attention to the details and handled the website work professionally."</div>
-          <div class="jp-review-client">
-            <strong>Renee Harris</strong>
-            <span>Verified Upwork Client</span>
-          </div>
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- SKILLS -->
-  <section class="jp-section jp-section-white" id="skills">
-    <div class="jp-container">
-
-      <div class="jp-section-header">
-        <div class="jp-section-label">Expertise</div>
-        <h2 class="jp-section-title">Tools and skills I use to get the job done.</h2>
-      </div>
-
-      <div class="jp-skills-box">
-        <div class="jp-skills">
-          <span class="jp-skill">WordPress</span>
-          <span class="jp-skill">Elementor</span>
-          <span class="jp-skill">SEO</span>
-          <span class="jp-skill">Technical SEO</span>
-          <span class="jp-skill">On-Page SEO</span>
-          <span class="jp-skill">Local SEO</span>
-          <span class="jp-skill">Keyword Research</span>
-          <span class="jp-skill">Google Search Console</span>
-          <span class="jp-skill">Google Analytics</span>
-          <span class="jp-skill">Rank Math</span>
-          <span class="jp-skill">WooCommerce</span>
-          <span class="jp-skill">Website Optimization</span>
-          <span class="jp-skill">Core Web Vitals</span>
-          <span class="jp-skill">GoHighLevel</span>
-          <span class="jp-skill">Landing Pages</span>
-          <span class="jp-skill">AI Content</span>
-          <span class="jp-skill">n8n Automation</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- CONTACT -->
-  <section class="jp-cta" id="contact">
-    <div class="jp-container jp-cta-inner">
-      <h2>Have a website or SEO project in mind?</h2>
-      <p>Whether you need a new website, improvements to an existing site, or help improving your search visibility, let's discuss how I can help.</p>
-      <a id="jpUpworkContact" href="#" target="_blank" rel="noopener noreferrer" class="jp-btn jp-btn-primary">Work With Me on Upwork →</a>
-    </div>
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer class="jp-footer">
-    <div class="jp-container jp-footer-inner">
-      <div>
-        <div class="jp-footer-name">Jamiu Sanni</div>
-        <div class="jp-footer-text">WordPress Website Designer & SEO Specialist</div>
-      </div>
-
-      <div class="jp-footer-links">
-        <a href="#home">Home</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#reviews">Client Reviews</a>
-        <a id="jpFooterUpwork" href="#" target="_blank" rel="noopener noreferrer">Upwork Profile</a>
-      </div>
-    </div>
-  </footer>
+<!-- NAVIGATION -->
+<nav class="jp-nav">
+<div class="jp-container jp-nav-inner">
+
+<a href="#home" class="jp-logo">
+<span class="jp-logo-mark">J</span>
+Jamiu Sanni
+</a>
+
+<button class="jp-mobile-menu" onclick="jpToggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="jpNavLinks">☰</button>
+
+<div class="jp-nav-links" id="jpNavLinks">
+<a href="#services">Services</a>
+<a href="#ghl">GoHighLevel</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#reviews">Reviews</a>
+<a href="https://wa.me/2347035373028?text=Hi%20Jamiu%2C%20I%27d%20like%20to%20talk%20about%20a%20website%2FSEO%2FGoHighLevel%20project" target="_blank" rel="noopener noreferrer" class="jp-nav-cta">Let's Work Together</a>
+</div>
+
+</div>
+</nav>
+
+
+<!-- HERO -->
+<section class="jp-hero" id="home">
+<div class="jp-container jp-hero-grid">
+
+<div>
+
+<div class="jp-eyebrow">
+<span class="jp-eyebrow-dot"></span>
+Website, SEO & GoHighLevel Specialist
+</div>
+
+<h1>I build websites and <span>marketing systems</span> designed to grow businesses.</h1>
+
+<p class="jp-hero-text">
+I'm Jamiu Sanni, a Website Designer, SEO Specialist and GoHighLevel
+specialist. I build professional websites, high-converting funnels and
+marketing systems that help businesses attract, capture and manage more leads.
+</p>
+
+<div class="jp-buttons">
+<a href="#portfolio" class="jp-btn jp-btn-primary">View My Work →</a>
+<a href="https://wa.me/2347035373028?text=Hi%20Jamiu%2C%20I%27d%20like%20to%20talk%20about%20a%20website%2FSEO%2FGoHighLevel%20project" target="_blank" rel="noopener noreferrer" class="jp-btn jp-btn-secondary">Let's Talk</a>
+</div>
+
+<div class="jp-trust-row">
+<div class="jp-trust-item">★ Top Rated on Upwork</div>
+<div class="jp-trust-item">✓ WordPress & SEO</div>
+<div class="jp-trust-item">✓ GoHighLevel Systems</div>
+</div>
+
+</div>
+
+
+<div class="jp-profile-card">
+
+<div class="jp-profile-top">
+<div class="jp-avatar">JS</div>
+<div>
+<div class="jp-profile-name">Jamiu Sanni</div>
+<div class="jp-profile-role">Website • SEO • GoHighLevel</div>
+</div>
+</div>
+
+<div class="jp-upwork-card">
+<div class="jp-upwork-top">
+<div class="jp-upwork-label">Professional Profile</div>
+<div class="jp-top-rated">★ Top Rated</div>
+</div>
+<div class="jp-upwork-title">Trusted by clients on Upwork</div>
+<div class="jp-upwork-stats">
+<div class="jp-stat"><strong>100%</strong><span>Job Success</span></div>
+<div class="jp-stat"><strong>4.6★</strong><span>Client Rating</span></div>
+<div class="jp-stat"><strong>1,500+</strong><span>Hours Worked</span></div>
+</div>
+</div>
+
+<div class="jp-ghl-card">
+<div class="jp-card-label">GoHighLevel Specialist</div>
+<h3>Funnels, CRM & Automations</h3>
+<div class="jp-mini-items">
+<div class="jp-mini-item">⚡ Funnels</div>
+<div class="jp-mini-item">🎯 Lead Capture</div>
+<div class="jp-mini-item">👥 CRM Setup</div>
+<div class="jp-mini-item">🔄 Automations</div>
+<div class="jp-mini-item">📊 Pipelines</div>
+<div class="jp-mini-item">📋 Forms & Surveys</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- SERVICES -->
+<section class="jp-section" id="services">
+<div class="jp-container">
+
+<div class="jp-section-header">
+<div class="jp-section-label">What I Do</div>
+<h2 class="jp-section-title">I build the website, the funnel and the system behind your growth.</h2>
+<p class="jp-section-description">
+My work combines website design, SEO and marketing automation to help
+businesses create a stronger online presence and turn more visitors into leads.
+</p>
+</div>
+
+<div class="jp-services">
+
+<div class="jp-service-card">
+<div class="jp-service-icon">◈</div>
+<h3>Website Design</h3>
+<p>Professional and responsive websites built with a focus on user experience, performance and clear business goals.</p>
+</div>
+
+<div class="jp-service-card">
+<div class="jp-service-icon">⌕</div>
+<h3>SEO & Optimization</h3>
+<p>On-page SEO, technical SEO, keyword research and website optimization to improve visibility and search performance.</p>
+</div>
+
+<div class="jp-service-card">
+<div class="jp-service-icon">⚡</div>
+<h3>GoHighLevel Funnels</h3>
+<p>Landing pages and conversion-focused funnels designed to capture leads and guide prospects through your customer journey.</p>
+</div>
+
+<div class="jp-service-card">
+<div class="jp-service-icon">⚙</div>
+<h3>CRM & Automation</h3>
+<p>CRM pipelines, Smart Lists, workflows and automations that help organize leads and improve follow-up processes.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- GOHIGHLEVEL SOLUTIONS -->
+<section class="jp-section jp-ghl-section" id="ghl">
+<div class="jp-container">
+<div class="jp-ghl-grid">
+
+<div class="jp-ghl-intro">
+<div class="jp-section-label">GoHighLevel Solutions</div>
+<h2>More than a funnel. I help build the system behind your marketing.</h2>
+<p>
+GoHighLevel allows businesses to bring lead capture, CRM, follow-up and
+marketing workflows into one system. I help set up and organize these
+systems so businesses can manage leads more effectively and create a
+smoother customer journey.
+</p>
+</div>
+
+<div class="jp-ghl-solutions">
+
+<div class="jp-ghl-solution">
+<div class="jp-ghl-solution-icon">🌐</div>
+<h3>Funnels & Landing Pages</h3>
+<p>Build responsive landing pages and funnels focused on lead generation and conversion.</p>
+</div>
+
+<div class="jp-ghl-solution">
+<div class="jp-ghl-solution-icon">🎯</div>
+<h3>Lead Capture Systems</h3>
+<p>Connect forms, surveys and calls-to-action to capture and organize new business leads.</p>
+</div>
+
+<div class="jp-ghl-solution">
+<div class="jp-ghl-solution-icon">👥</div>
+<h3>CRM & Pipelines</h3>
+<p>Set up pipelines and contact stages to help businesses track leads from inquiry to conversion.</p>
+</div>
+
+<div class="jp-ghl-solution">
+<div class="jp-ghl-solution-icon">🔄</div>
+<h3>Workflow Automations</h3>
+<p>Create workflows that automate follow-up and internal processes within the customer journey.</p>
+</div>
+
+<div class="jp-ghl-solution">
+<div class="jp-ghl-solution-icon">📊</div>
+<h3>Smart Lists</h3>
+<p>Organize contacts using filters and segmentation to make lead management easier.</p>
+</div>
+
+<div class="jp-ghl-solution">
+<div class="jp-ghl-solution-icon">⭐</div>
+<h3>Reputation Management</h3>
+<p>Set up review collection systems that help businesses manage customer feedback and build trust.</p>
+</div>
+
+<div class="jp-ghl-solution">
+<div class="jp-ghl-solution-icon">📋</div>
+<h3>Forms & Surveys</h3>
+<p>Create forms and surveys that collect useful customer information and send it directly into your CRM.</p>
+</div>
+
+<div class="jp-ghl-solution">
+<div class="jp-ghl-solution-icon">🏢</div>
+<h3>Subaccount Setup</h3>
+<p>Assist with GoHighLevel subaccount configuration and setup for businesses and marketing operations.</p>
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- PORTFOLIO -->
+<section class="jp-section jp-section-white" id="portfolio">
+<div class="jp-container">
+
+<div class="jp-section-header">
+<div class="jp-section-label">Selected Work</div>
+<h2 class="jp-section-title">Projects and systems I've built.</h2>
+<p class="jp-section-description">A selection of website, SEO, GoHighLevel and digital projects.</p>
+</div>
+
+<div class="jp-projects">
+
+<!-- GHL PROJECT -->
+<article class="jp-project">
+<div class="jp-project-preview">
+<div class="jp-browser">
+<div class="jp-browser-bar">
+<span class="jp-browser-dot"></span>
+<span class="jp-browser-dot"></span>
+<span class="jp-browser-dot"></span>
+<span class="jp-browser-url"></span>
+</div>
+<div style="height:calc(100% - 39px); padding:35px; background:linear-gradient(135deg,#f0fdfa,#ffffff);">
+<div style="font-family:Manrope; font-weight:800; font-size:26px; color:#10233d; margin-bottom:12px;">GoHighLevel Funnel System</div>
+<div style="color:#414a58; line-height:1.7; margin-bottom:25px;">Landing page, lead capture and CRM workflow built inside GoHighLevel.</div>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+<div class="jp-mini-item">Landing Page</div>
+<div class="jp-mini-item">Lead Form</div>
+<div class="jp-mini-item">CRM Pipeline</div>
+<div class="jp-mini-item">Smart Lists</div>
+<div class="jp-mini-item">Automation</div>
+<div class="jp-mini-item">Follow-Up</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jp-project-info">
+<div class="jp-project-number">01 / GOHIGHLEVEL SYSTEM</div>
+<h3>Lead Generation & Funnel System</h3>
+<p>A GoHighLevel-based marketing setup combining a landing page, lead capture process, contact organization and CRM structure to create a more organized customer acquisition workflow.</p>
+<div class="jp-tags">
+<span class="jp-tag">GoHighLevel</span>
+<span class="jp-tag">Funnels</span>
+<span class="jp-tag">CRM</span>
+<span class="jp-tag">Automation</span>
+</div>
+<a href="#ghl" class="jp-project-link">Explore My GHL Skills →</a>
+</div>
+</article>
+
+<!-- 219 AGENCY -->
+<article class="jp-project">
+<div class="jp-project-preview">
+<div class="jp-browser">
+<div class="jp-browser-bar">
+<span class="jp-browser-dot"></span>
+<span class="jp-browser-dot"></span>
+<span class="jp-browser-dot"></span>
+<span class="jp-browser-url"></span>
+</div>
+<iframe class="jp-project-frame" data-src="https://seo.219agency.com" loading="lazy" title="219 Agency SEO — live preview"></iframe>
+</div>
+</div>
+
+<div class="jp-project-info">
+<div class="jp-project-number">02 / SEO PROJECT</div>
+<h3>219 Agency SEO</h3>
+<p>An SEO-focused project designed to present services, improve search visibility and provide a clear structure for users and search engines.</p>
+<div class="jp-tags">
+<span class="jp-tag">SEO</span>
+<span class="jp-tag">Website Optimization</span>
+<span class="jp-tag">Content Strategy</span>
+</div>
+<a href="https://seo.219agency.com" target="_blank" rel="noopener noreferrer" class="jp-project-link">Visit Project →</a>
+</div>
+</article>
+
+<!-- CLICKLEADZ -->
+<article class="jp-project">
+<div class="jp-project-preview">
+<div class="jp-browser">
+<div class="jp-browser-bar">
+<span class="jp-browser-dot"></span>
+<span class="jp-browser-dot"></span>
+<span class="jp-browser-dot"></span>
+<span class="jp-browser-url"></span>
+</div>
+<iframe class="jp-project-frame" data-src="https://clickleadz.net" loading="lazy" title="ClickLeadz — live preview"></iframe>
+</div>
+</div>
+
+<div class="jp-project-info">
+<div class="jp-project-number">03 / SAAS PROJECT</div>
+<h3>ClickLeadz</h3>
+<p>A lead generation platform designed to help businesses identify, capture and organize potential customers from Facebook groups and other engagement opportunities.</p>
+<div class="jp-tags">
+<span class="jp-tag">SaaS</span>
+<span class="jp-tag">Lead Generation</span>
+<span class="jp-tag">Marketing</span>
+</div>
+<a href="https://clickleadz.net" target="_blank" rel="noopener noreferrer" class="jp-project-link">Visit Project →</a>
+</div>
+</article>
+
+<!-- DYNAMIC POWER -->
+<article class="jp-project">
+<div class="jp-project-preview">
+<div class="jp-browser">
+<div class="jp-browser-bar">
+<span class="jp-browser-dot"></span>
+<span class="jp-browser-dot"></span>
+<span class="jp-browser-dot"></span>
+<span class="jp-browser-url"></span>
+</div>
+<iframe class="jp-project-frame" data-src="https://dynamicpower.vercel.app" loading="lazy" title="Dynamic Power — live preview"></iframe>
+</div>
+</div>
+
+<div class="jp-project-info">
+<div class="jp-project-number">04 / PRODUCT LANDING PAGE</div>
+<h3>Dynamic Power</h3>
+<p>A conversion-focused landing page designed to communicate the value of a portable power solution and encourage potential customers to take action.</p>
+<div class="jp-tags">
+<span class="jp-tag">Landing Page</span>
+<span class="jp-tag">Conversion</span>
+<span class="jp-tag">Product Marketing</span>
+</div>
+<a href="https://dynamicpower.vercel.app" target="_blank" rel="noopener noreferrer" class="jp-project-link">Visit Project →</a>
+</div>
+</article>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- UPWORK REVIEWS -->
+<section class="jp-section" id="reviews">
+<div class="jp-container">
+
+<div class="jp-upwork-banner">
+<div>
+<h3>⭐ Top Rated on Upwork</h3>
+<p>See my work history and client feedback on my Upwork profile.</p>
+</div>
+<a id="jpUpworkLink" href="#" target="_blank" rel="noopener noreferrer" class="jp-upwork-btn">View My Upwork Profile →</a>
+</div>
+
+<div class="jp-section-header">
+<div class="jp-section-label">Client Reviews</div>
+<h2 class="jp-section-title">What clients say about working with me.</h2>
+<p class="jp-section-description">Real feedback from clients I've worked with through Upwork.</p>
+</div>
+
+<div class="jp-reviews">
+
+<article class="jp-review">
+<div class="jp-stars">★★★★★</div>
+<div class="jp-review-text">
+"Jamiu did an excellent job fixing linking and button issues on my WordPress + Elementor site. He quickly identified the root cause, cleaned up problematic code, and made sure everything was working exactly as it should across devices.
+<br><br>
+Communication was clear, turnaround was fast, and he confirmed everything thoroughly before closing the task. No overcomplication, just efficient, high-quality work.
+<br><br>
+If you need a reliable WordPress/Elementor expert who actually understands what they're doing, Jamiu is a safe choice. Will happily work with him again."
+</div>
+<div class="jp-review-client">
+<strong>Jonathan Sumner</strong>
+<span>Verified Upwork Client</span>
+</div>
+</article>
+
+<article class="jp-review">
+<div class="jp-stars">★★★★★</div>
+<div class="jp-review-text">"Jamiu is professional and eager to work. He is consistent and reliable."</div>
+<div class="jp-review-client">
+<strong>Janna Lusk</strong>
+<span>Verified Upwork Client</span>
+</div>
+</article>
+
+<article class="jp-review">
+<div class="jp-stars">★★★★★</div>
+<div class="jp-review-text">"Jamiu was easy to work with and understood what needed to be done. He paid attention to the details and handled the website work professionally."</div>
+<div class="jp-review-client">
+<strong>Renee Harris</strong>
+<span>Verified Upwork Client</span>
+</div>
+</article>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- SKILLS -->
+<section class="jp-section jp-section-white" id="skills">
+<div class="jp-container">
+
+<div class="jp-section-header">
+<div class="jp-section-label">Expertise</div>
+<h2 class="jp-section-title">Tools and systems I work with.</h2>
+</div>
+
+<div class="jp-skills-box">
+<div class="jp-skills">
+<span class="jp-skill">GoHighLevel</span>
+<span class="jp-skill">Funnels</span>
+<span class="jp-skill">Landing Pages</span>
+<span class="jp-skill">CRM Setup</span>
+<span class="jp-skill">Pipelines</span>
+<span class="jp-skill">Smart Lists</span>
+<span class="jp-skill">Workflows</span>
+<span class="jp-skill">Automation</span>
+<span class="jp-skill">Forms & Surveys</span>
+<span class="jp-skill">Reputation Management</span>
+<span class="jp-skill">WordPress</span>
+<span class="jp-skill">Elementor</span>
+<span class="jp-skill">SEO</span>
+<span class="jp-skill">Technical SEO</span>
+<span class="jp-skill">On-Page SEO</span>
+<span class="jp-skill">Local SEO</span>
+<span class="jp-skill">Keyword Research</span>
+<span class="jp-skill">Rank Math</span>
+<span class="jp-skill">Google Search Console</span>
+<span class="jp-skill">Google Analytics</span>
+<span class="jp-skill">Core Web Vitals</span>
+<span class="jp-skill">WooCommerce</span>
+<span class="jp-skill">n8n Automation</span>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- CTA -->
+<section class="jp-cta" id="contact">
+<div class="jp-container jp-cta-inner">
+<h2>Let's build something that works for your business.</h2>
+<p>From websites and SEO to GoHighLevel funnels, CRM systems and marketing automations, I can help you create a stronger system for attracting and managing customers.</p>
+<a id="jpUpworkContact" href="#" target="_blank" rel="noopener noreferrer" class="jp-btn jp-btn-primary">Work With Me on Upwork →</a>
+</div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="jp-footer">
+<div class="jp-container jp-footer-inner">
+<div>
+<div class="jp-footer-name">Jamiu Sanni</div>
+<div class="jp-footer-text">Website Design • SEO • GoHighLevel Systems</div>
+</div>
+
+<div class="jp-footer-links">
+<a href="#home">Home</a>
+<a href="#ghl">GoHighLevel</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#reviews">Reviews</a>
+<a id="jpFooterUpwork" href="#" target="_blank" rel="noopener noreferrer">Upwork Profile</a>
+</div>
+</div>
+</footer>
 
 </div>
 
